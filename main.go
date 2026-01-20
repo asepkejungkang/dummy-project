@@ -18,6 +18,10 @@ func main() {
 		fmt.Fprintf(w, "Playlist")
 	})
 
+	http.HandleFunc("/songs", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Songs")
+	})
+
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		panic("error listening 8080")
 	}
