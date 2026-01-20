@@ -18,6 +18,10 @@ func main() {
 		fmt.Fprintf(w, "Playlist")
 	})
 
+	http.HandleFunc("/songs", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Songs")
+	})
+
 	http.HandleFunc("/listeners", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Listener")
 	})
