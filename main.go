@@ -10,12 +10,16 @@ func main() {
 		fmt.Fprintf(w, "Hello, World!")
 	})
 
-	http.HandleFunc("/release", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/releases", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Release")
 	})
 
-	http.HandleFunc("/playlist", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/playlists", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Playlist")
+	})
+
+	http.HandleFunc("/listeners", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Listener")
 	})
 
 	if err := http.ListenAndServe(":8080", nil); err != nil {
